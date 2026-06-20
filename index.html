@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unlocking Housing — Local-First Property Discovery for Austria</title>
+  <meta name="description" content="Open-source, local-first tools for discovering vacant and developable properties in Austria. Built for bioregional communities and housing cooperatives.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="canonical" href="https://evobiosys.github.io/unlocking-housing/">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+  <meta property="og:title" content="Unlocking Housing — Local-First Property Discovery">
+  <meta property="og:description" content="Open-source geo-mapping tools for vacant and developable properties in Austria.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Unlocking Housing
+      </a>
+      <div class="nav-links">
+        <a href="#what">What</a>
+        <a href="#how">How</a>
+        <a href="#stack">Tech</a>
+        <a href="#newsletter">Updates</a>
+        <a href="https://evobiosys.org" target="_blank" rel="noopener">EvoBioSys</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell">
+      <span class="eyebrow">Bio pillar &middot; EvoBioSys &middot; Local-first &middot; Austria</span>
+      <h1>Unlocking Housing</h1>
+      <p class="lede">
+        Open-source, local-first tools for discovering vacant and developable
+        properties in Austria &mdash; built for bioregional communities,
+        housing cooperatives, and people working to bring land back into use.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-forest" href="#what">How it works</a>
+        <a class="btn btn-outline" href="#newsletter">Stay updated</a>
+        <a class="btn btn-soft" href="https://evobiosys.org/holons/unlocking-housing/" target="_blank" rel="noopener">Project holon &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="what">
+    <div class="shell">
+      <h2>The problem it solves</h2>
+      <p>
+        Austria has significant stocks of vacant, underutilised, and potentially
+        developable land &mdash; but finding it requires navigating fragmented
+        cadastral databases, proprietary tools, and opaque administrative processes.
+        The information exists; what&rsquo;s missing is a way to work with it that
+        is local, sovereign, and built for the communities who need it most.
+      </p>
+      <p>
+        Unlocking Housing is a suite of geo-mapping modules that runs on your own
+        machine, connects to public Austrian spatial data sources, and produces
+        actionable maps of where housing development may be possible &mdash; without
+        sending your research to a third-party server.
+      </p>
+      <div class="feature-grid">
+        <div class="card">
+          <h3>Vacancy detection</h3>
+          <p>Identify properties showing signs of vacancy or long-term non-use through
+          spatial analysis of cadastral and planning data.</p>
+        </div>
+        <div class="card">
+          <h3>Bioregional context</h3>
+          <p>Every property in its bioregional context &mdash; watershed, soil type,
+          ecological connectivity &mdash; not just administrative boundaries.</p>
+        </div>
+        <div class="card">
+          <h3>Local routing</h3>
+          <p>Valhalla-powered routing for access analysis: how reachable is a site by
+          foot, cycle, or public transport? All computed locally.</p>
+        </div>
+        <div class="card">
+          <h3>Logseq integration</h3>
+          <p>Research writes back to your local Logseq graph &mdash; every property
+          investigation becomes a note in your personal knowledge base.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="how">
+    <div class="shell">
+      <h2>Who builds it and why</h2>
+      <p>
+        Unlocking Housing is the flagship project of the <strong>Bio pillar</strong>
+        of <a href="https://evobiosys.org" target="_blank" rel="noopener">EvoBioSys</a>
+        &mdash; the branch of the constellation concerned with living, biological,
+        and bioregional systems. Where the Sys pillar builds the digital infrastructure
+        and the Evo pillar supports human development, the Bio pillar works with
+        the living substrate: land, housing, bioregions, and the material conditions
+        of human settlement.
+      </p>
+      <p>
+        The project sits at the intersection of two urgent problems: the housing
+        affordability crisis and the underuse of existing built and natural resources.
+        Rather than building more, the starting question is: <em>what is already here,
+        and how can it be brought back into life?</em>
+      </p>
+      <p>
+        The tools are designed primarily for housing cooperatives, community land
+        trusts, municipal planners with limited budgets, and researchers working on
+        Austrian housing policy &mdash; groups who need accurate spatial intelligence
+        but cannot afford (or do not trust) commercial GIS platforms.
+      </p>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="shell">
+      <h2>Built local-first</h2>
+      <p>
+        The entire stack runs on your own hardware. No data leaves your machine unless
+        you explicitly export it. The architecture is designed to be extended, forked,
+        and adapted to other European property markets with different data sources.
+      </p>
+      <div class="tech-list">
+        <span class="tech-tag">MapLibre GL JS</span>
+        <span class="tech-tag">SvelteKit</span>
+        <span class="tech-tag">Valhalla routing</span>
+        <span class="tech-tag">GeoJSON / PMTiles</span>
+        <span class="tech-tag">Austrian Open Data (AT)</span>
+        <span class="tech-tag">INSPIRE geodata</span>
+        <span class="tech-tag">Podman containers</span>
+        <span class="tech-tag">Logseq writeback</span>
+        <span class="tech-tag">QGIS-compatible</span>
+      </div>
+      <p style="margin-top: 1.5rem;">
+        The monorepo is organised into focused modules &mdash;
+        <code>map-core</code>, <code>geo-layers-at</code>, <code>vacancy</code>,
+        <code>bioregions</code>, <code>listings-matcher</code>, and
+        <code>writeback</code> &mdash; each independently usable and replaceable.
+        Infrastructure is containerised via Podman for reproducibility across machines.
+      </p>
+    </div>
+  </section>
+
+  <section class="alt" id="newsletter">
+    <div class="shell">
+      <div class="newsletter">
+        <h2>Follow the build</h2>
+        <p>Updates on the tools, the data sources, and the broader project of
+        bioregional housing discovery in Austria.<br>
+        No tracking. No upsell. EU-hosted.</p>
+        <form id="uh-nl-form" class="nl-form">
+          <input type="email" id="uh-nl-email" name="email" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-forest">Subscribe</button>
+        </form>
+        <small id="uh-nl-note">Double opt-in. Unsubscribe anytime.</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell-wide footer-inner">
+      <div class="footer-brand">
+        <strong>Unlocking Housing</strong>
+        <p>Local-first property discovery for Austria.<br>
+        <small>Bio pillar of the <a href="https://evobiosys.org">EvoBioSys</a> constellation.</small></p>
+      </div>
+      <div class="footer-links">
+        <h4>EvoBioSys</h4>
+        <ul>
+          <li><a href="https://evobiosys.org">EvoBioSys</a></li>
+          <li><a href="https://questhub.eco">QuestHub</a></li>
+          <li><a href="https://kidur.org">Kidur</a></li>
+          <li><a href="https://evopaideia.org">EvoPaideia</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('uh-nl-form');
+      var note = document.getElementById('uh-nl-note');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('uh-nl-email').value.trim();
+        if (!email) return;
+        var btn = form.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+        fetch('https://subscriber.evobiosys.org/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'unlocking-housing', project: 'Unlocking Housing' })
+        })
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+          .then(function () {
+            document.getElementById('uh-nl-email').value = '';
+            btn.disabled = false;
+            btn.textContent = 'Subscribe';
+            note.textContent = 'Confirmed — check your inbox to complete your subscription.';
+            note.style.color = 'var(--forest)';
+            note.style.fontSize = '1rem';
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Subscribe';
+            note.textContent = 'Something went wrong — try again or email connect@evobiosys.org';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
